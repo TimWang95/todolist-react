@@ -49,6 +49,24 @@ const TodoPage = () => {
 
     setInputValue('')
   }
+  const handleKeyDown = () => {
+    if (inputValue.length === 0) {
+      return;
+    }
+
+    setTodos((prevTodos) => {
+      return [
+        ...prevTodos,
+        {
+          id: Math.random() * 100,
+          title: inputValue,
+          isDone: false,
+        }
+      ]
+    })
+
+    setInputValue('')
+  }
   return (
     <div>
       TodoPage
@@ -57,6 +75,7 @@ const TodoPage = () => {
         inputValue={inputValue} 
         onChange={handleInput}
         onAddTodo={handleTodo} 
+        onKeyDown={handleKeyDown}
       />
       <TodoCollection todos={todos} />
       <Footer /> 
