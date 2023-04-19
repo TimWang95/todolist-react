@@ -111,6 +111,9 @@ const TodoPage = () => {
       })
     })
   }
+  const handleDelete = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id))
+  }
   return (
     <div>
       TodoPage
@@ -120,6 +123,7 @@ const TodoPage = () => {
         onChange={handleChange}
         onAddTodo={handleAddTodo} 
         onKeyDown={handleKeyDown}
+        onDelete={handleDelete}
       />
       <TodoCollection 
         todos={todos} 
