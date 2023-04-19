@@ -124,13 +124,13 @@ const TodoPage = () => {
         onChange={handleChange}
         onAddTodo={handleAddTodo} 
         onKeyDown={handleKeyDown}
-        onDelete={handleDelete}
-      />
+        />
       <TodoCollection 
         todos={todos} 
         onSave={handleSave}
         onToggleDone={handleToggleDone} 
         onChangeMode={handleChangeMode}  
+        onDelete={handleDelete}
       />
       <Footer numOfTodos={todoNums} /> 
     </div>
