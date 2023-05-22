@@ -1,8 +1,15 @@
-const baseUrl = 'http://localhost:3004';
+import axios from 'axios'
 
-const getTodos = () => {};
+const baseUrl = 'http://localhost:3004'
 
-const createTodo = () => {};
+export const getTodos = async () => {
+  try {
+    const res = await axios.get(`${baseUrl}/todos`);
+    return res.data;
+  } catch (error) {
+    console.error('[Get Todos failed]: ', error);
+  }
+}
 
 const patchTodo = () => {};
 
