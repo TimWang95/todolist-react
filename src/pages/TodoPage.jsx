@@ -2,7 +2,7 @@ import { Footer, Header, TodoCollection, TodoInput } from 'components';
 import { useState, useEffect } from 'react'
 import { getTodos, createTodo, patchTodo, deleteTodo } from '../api/todos';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from 'react'
+import { useAuth } from 'contexts/AuthContext'
 
 const TodoPage = () => {
   const [inputValue, setInputValue] = useState('')
