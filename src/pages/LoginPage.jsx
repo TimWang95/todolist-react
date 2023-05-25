@@ -9,7 +9,7 @@ import { AuthInput } from 'components';
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import { useAuth } from 'contexts/AuthContext'
+import { useAuth } from '../contexts/AuthContext'
 
 const LoginPage = () => {
   const [username, setUsername] = useState('')
@@ -54,7 +54,7 @@ const LoginPage = () => {
       navigate('/todos')
     }
   }, [navigate, isAuthenticated]);
-  
+
   return (
     <AuthContainer>
       <div>
